@@ -1,0 +1,108 @@
+:root {
+  --bg-color: #d2b48c;
+  --bg-gradient: #c19a6b;
+  --container-bg: #5c3a21;
+  --text-color: #f5e6c8;
+  --accent-color: #ffd700;
+  --border-color: #3b2415;
+  --table-bg: #f5e6c8;
+  --table-text: #3b2415;
+  --row-even: #ead7b7;
+  --row-hover: #e0c89f;
+  --input-bg: #f5e6c8;
+}
+
+.dark-mode {
+  --bg-color: #1a1a1a;
+  --bg-gradient: #111111;
+  --container-bg: #2d2d2d;
+  --text-color: #e2e2e2;
+  --accent-color: #f6ad55; 
+  --border-color: #111111;
+  --table-bg: #3d3d3d;
+  --table-text: #e2e2e2;
+  --row-even: #323232;
+  --row-hover: #4a4a4a;
+  --input-bg: #444444;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: Georgia, serif;
+  background: linear-gradient(var(--bg-color), var(--bg-gradient));
+  display: flex;
+  justify-content: center;
+  padding: 50px 20px;
+  min-height: 100vh;
+}
+
+.container {
+  width: 800px;            
+  max-width: 90vw;        
+  background: var(--container-bg);
+  padding: 40px;
+  border-radius: 20px;
+  border: 4px solid var(--border-color);
+  box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.6), 0 20px 40px rgba(0, 0, 0, 0.4);
+  color: var(--text-color);
+  background-image: radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size: 8px 8px;
+  position: relative;
+}
+
+
+.utility-bar { position: absolute; top: 5px; right: 15px; display: flex; gap: 10px; }
+.util-btn { background-color: #4a5568; color: white; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; display: flex; align-items: center; gap: 5px; }
+.clear-btn { background-color: #e53e3e; }
+
+h1 { text-align: center; margin-bottom: 30px; font-size: 32px; letter-spacing: 2px; color: var(--accent-color); text-shadow: 2px 2px 4px black; }
+h2, .form-row label { color: var(--accent-color); }
+
+form { display: flex; flex-direction: column; gap: 18px; margin-bottom: 35px; padding-left: 20px; }
+.form-row { display: grid; grid-template-columns: 160px 1fr; align-items: center; gap: 15px; margin-bottom: 10px; }
+.form-row input, .form-row select { padding: 8px 10px; border-radius: 6px; border: 2px solid var(--border-color); background: var(--input-bg); color: var(--table-text); font-family: Georgia, serif; }
+
+.form-row button#add-item { justify-self: start; padding: 8px 18px; background: #8b5a2b; color: #fff8dc; border: 2px solid var(--border-color); border-radius: 8px; font-weight: bold; cursor: pointer; }
+
+
+table { width: 100%; border-collapse: collapse; background: var(--table-bg); color: var(--table-text); border-radius: 10px; overflow: hidden; }
+thead { background: #8b5a2b; color: white; }
+th, td { padding: 12px; text-align: center; }
+tbody tr:nth-child(even) { background: var(--row-even); }
+
+.edit-btn { background: #2b6cb0; color: white; border: none; padding: 6px 12px; border-radius: 6px; cursor: pointer; font-weight: bold; margin-right: 5px; }
+.delete-btn { background: #6b0000; color: white; border: none; padding: 6px 12px; border-radius: 6px; cursor: pointer; font-weight: bold; }
+
+.editing-row { background-color: #add8e6 !important; }
+
+
+.vault-footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255, 215, 0, 0.2); text-align: center; font-size: 0.85rem; color: var(--text-color); }
+.copy-btn {
+    background: #2d3748; 
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.copy-btn:hover { background: #4a5568; }
+
+@media (max-width: 600px) {
+    .container { width: 100%; max-width: 100vw; padding: 20px 10px; border-radius: 0; }
+    .utility-bar { position: static; justify-content: center; margin-bottom: 20px; }
+    .form-row { display: flex; flex-direction: column; align-items: stretch; padding-left: 0; }
+    
+  
+    tfoot tr { display: flex; flex-direction: column; align-items: center; background: rgba(0,0,0,0.1); padding: 15px; border-radius: 8px; margin-top: 10px; }
+    tfoot td { display: block; width: 100%; text-align: center !important; padding: 5px 0; border: none !important; font-size: 1.2rem; color: var(--accent-color); }
+
+    table, thead, tbody, th, td, tr { display: block; }
+    thead tr { position: absolute; top: -9999px; left: -9999px; } 
+
+    tr { border: 2px solid var(--border-color); margin-bottom: 15px; background: var(--table-bg); border-radius: 10px; padding: 5px; }
+    td { position: relative; padding-left: 45% !important; text-align: right; border-bottom: 1px solid rgba(0,0,0,0.1); }
+    td:before { position: absolute; left: 10px; font-weight: bold; color: #8b5a2b; content: attr(data-label); }
+    td:last-child { text-align: center; padding-left: 0 !important; border: none; padding-top: 10px; }
+}
