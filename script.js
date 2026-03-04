@@ -1,17 +1,25 @@
-const APP_VERSION = "1.1.0";
+const APP_VERSION = "1.2.0";
 
-
-let vault = JSON.parse(localStorage.getItem("vault")) || [];
-let editingItemId = null;
+let allCharacters = JSON.parse(localStorage.getItem("allCharacters")) || { "Default": [] };
+let activeCharacter = localStorage.getItem("activeCharacter") || "Default";
+let vault = allCharacters[activeCharacter] || [];
 let itemMemory = JSON.parse(localStorage.getItem("itemMemory")) || {};
+let editingItemId = null;
 
-const saveToDisk = () => localStorage.setItem("vault", JSON.stringify(vault));
+
+const saveToDisk = () => {
+    allCharacters[activeCharacter] = vault; 
+    localStorage.setItem("allCharacters", JSON.stringify(allCharacters));
+    localStorage.setItem("activeCharacter", activeCharacter);
+    localStorage.setItem("itemMemory", JSON.stringify(itemMemory));
+};
 
 
 const elements = {
     form: document.getElementById("vault-form"),
     tableBody: document.getElementById("vault-table"),
     totalGoldEl: document.getElementById("total-value"),
+    tabsContainer: document.getElementById("tabs-list"),
     inputs: {
         name: document.getElementById("name"), 
         rarity: document.getElementById("rarity"),
@@ -25,6 +33,70 @@ const elements = {
         sort: document.getElementById("sort")
     }
 };
+
+
+
+function renderCharacterTabs() {
+    const names = Object.keys(allCharacters);
+    elements.tabsContainer.innerHTML = names.map(name => `
+        <div class="char-tab ${name === activeCharacter ? 'active' : ''}" onclick="switchCharacter('${name}')">
+            <span>${name}</span>
+            <small style="opacity: 0.7; font-size: 0.75rem;">(${allCharacters[name].length})</small>
+        </div>
+    `).join('');
+}
+
+window.switchCharacter = (name) => {
+    
+    allCharacters[activeCharacter] = vault; 
+    
+    activeCharacter = name;
+    vault = allCharacters[activeCharacter] || [];
+    
+    saveToDisk();
+    renderCharacterTabs();
+    renderVault();
+};
+
+document.getElementById("add-character-btn").onclick = () => {
+    const name = prompt("Enter new Character or Campaign name:");
+    if (name && !allCharacters[name]) {
+        allCharacters[name] = [];
+        switchCharacter(name);
+    } else if (name) {
+        alert("That name already exists!");
+    }
+};
+
+document.getElementById("rename-character-btn").onclick = () => {
+    const newName = prompt(`Rename "${activeCharacter}" to:`, activeCharacter);
+    if (newName && newName !== activeCharacter) {
+        if (allCharacters[newName]) return alert("Name already exists!");
+        
+        allCharacters[newName] = allCharacters[activeCharacter];
+        delete allCharacters[activeCharacter];
+        activeCharacter = newName;
+        
+        saveToDisk();
+        renderCharacterTabs();
+    }
+};
+
+document.getElementById("delete-character-btn").onclick = () => {
+    const names = Object.keys(allCharacters);
+    if (names.length <= 1) return alert("You must have at least one character!");
+    
+    if (confirm(`⚠️ Are you sure you want to delete "${activeCharacter}"?`)) {
+        delete allCharacters[activeCharacter];
+        activeCharacter = Object.keys(allCharacters)[0];
+        vault = allCharacters[activeCharacter];
+        
+        saveToDisk();
+        renderCharacterTabs();
+        renderVault();
+    }
+};
+
 
 
 const getRarityColor = (rarity) => {
@@ -42,68 +114,49 @@ function updateUIState() {
     if (isArtifact) elements.inputs.value.value = "";
 }
 
-function updateDatalist() {
-    const list = document.getElementById("item-suggestions");
-    if (!list) return;
-    const names = Object.keys(itemMemory);
-    list.innerHTML = names.map(name => 
-        `<option value="${name.charAt(0).toUpperCase() + name.slice(1)}">`
-    ).join('');
-}
-
-function copyToClipboard(id) {
-    const item = vault.find(i => i.id === id);
-    const text = `📦 **${item.name}** (${item.rarity} | ${item.type}) \n💰 Value: ${item.rarity === "Artifact" ? "?" : item.value} gp | Qty: ${item.quantity}`;
-    navigator.clipboard.writeText(text).then(() => {
-        alert(`Copied ${item.name} to clipboard!`);
-    });
-}
-
 function renderVault() {
-    const { rarity: filterRarity, sort: sortType } = elements.filter;
+    const filterRarity = elements.filter.rarity.value;
+    const sortType = elements.filter.sort.value;
     const searchTerm = elements.inputs.search.value.toLowerCase();
 
     let displayList = vault.filter(item => {
-        const matchesRarity = filterRarity.value === "All" || item.rarity === filterRarity.value;
+        const matchesRarity = filterRarity === "All" || item.rarity === filterRarity;
         const matchesSearch = item.name.toLowerCase().includes(searchTerm);
         return matchesRarity && matchesSearch; 
     });
 
-   
+    
     displayList.sort((a, b) => {
-        switch (sortType.value) {
+        switch (sortType) {
             case "NameAsc": return a.name.localeCompare(b.name);
             case "NameDesc": return b.name.localeCompare(a.name);
             case "ValueAsc": return (a.value || 0) - (b.value || 0);
             case "ValueDesc": return (b.value || 0) - (a.value || 0);
             case "Rarity":
-                const rarityOrder = { "Artifact": 6, "Legendary": 5, "Very Rare": 4, "Rare": 3, "Uncommon": 2, "Common": 1 };
-                return rarityOrder[b.rarity] - rarityOrder[a.rarity];
+                const order = { "Artifact": 6, "Legendary": 5, "Very Rare": 4, "Rare": 3, "Uncommon": 2, "Common": 1 };
+                return order[b.rarity] - order[a.rarity];
             default: return 0;
         }
     });
 
     const total = displayList.reduce((sum, item) => sum + ((item.value || 0) * item.quantity), 0);
-    const artifactCount = displayList.filter(i => i.rarity === "Artifact").length;
-    const artifactText = artifactCount === 1 ? "1 Artifact" : `${artifactCount} Artifacts`;
-    
-    elements.totalGoldEl.textContent = `${total.toLocaleString()} gp ${artifactCount > 0 ? `(excluding ${artifactText})` : ""}`;
+    elements.totalGoldEl.textContent = `${total.toLocaleString()} gp`;
 
     elements.tableBody.innerHTML = displayList.map(item => `
-        <tr class="${item.id === editingItemId ? 'editing-row' : ''}" data-id="${item.id}">
+        <tr data-id="${item.id}" class="${item.id === editingItemId ? 'editing-row' : ''}">
             <td data-label="Name">${item.name}</td>
             <td data-label="Rarity" style="color:${getRarityColor(item.rarity)}; font-weight: bold;">${item.rarity}</td>
             <td data-label="Type">${item.type}</td>
-            <td data-label="Value">${item.rarity === "Artifact" ? "?" : item.value.toLocaleString()}</td>
-            <td data-label="Quantity">${item.quantity}</td>
+            <td data-label="Value">${item.rarity === "Artifact" ? "?" : (item.value || 0).toLocaleString()}</td>
+            <td data-label="Qty">${item.quantity}</td>
             <td data-label="Actions">
                 <button class="edit-btn">Edit</button>
                 <button class="delete-btn">Delete</button>
-                <button class="copy-btn" onclick="copyToClipboard(${item.id})">📋 Copy</button>
             </td>
         </tr>
     `).join('');
 }
+
 
 
 elements.form.addEventListener("submit", (e) => {
@@ -119,16 +172,8 @@ elements.form.addEventListener("submit", (e) => {
         quantity: Number(quantity.value)
     };
 
-   
-    if (item.name && item.rarity) {
-        itemMemory[item.name.toLowerCase()] = {
-            rarity: item.rarity,
-            type: item.type,
-            value: item.value
-        };
-        localStorage.setItem("itemMemory", JSON.stringify(itemMemory));
-        updateDatalist();
-    }
+    
+    itemMemory[item.name.toLowerCase()] = { rarity: item.rarity, type: item.type, value: item.value };
 
     if (editingItemId) {
         vault = vault.map(i => i.id === editingItemId ? item : i);
@@ -140,11 +185,90 @@ elements.form.addEventListener("submit", (e) => {
     saveToDisk();
     elements.form.reset();
     updateUIState();
-    renderVault();  
+    renderVault(); 
+    renderCharacterTabs(); 
 });
 
 
-elements.tableBody.addEventListener("click", (e) => {
+elements.inputs.name.addEventListener("input", (e) => {
+    const remembered = itemMemory[e.target.value.toLowerCase()];
+    if (remembered) {
+        elements.inputs.rarity.value = remembered.rarity;
+        elements.inputs.type.value = remembered.type;
+        elements.inputs.value.value = remembered.value || "";
+        updateUIState();
+    }
+});
+
+
+
+document.getElementById("export-vault").onclick = () => {
+    
+    const totalItems = Object.values(allCharacters).flat().length;
+    if (totalItems === 0) return alert("All vaults are currently empty!");
+
+   
+    const dataStr = JSON.stringify(allCharacters, null, 2);
+    const blob = new Blob([dataStr], {type: "application/json"});
+    const url = URL.createObjectURL(blob);
+    
+    const link = document.createElement("a");
+    link.href = url;
+   
+    link.download = `hero-vault-MASTER-BACKUP-${new Date().toISOString().split('T')[0]}.json`;
+    
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+};
+
+document.getElementById("import-vault").onchange = (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+    
+    const reader = new FileReader();
+    reader.onload = (event) => {
+        try {
+            const importedData = JSON.parse(event.target.result);
+            
+            if (importedData && typeof importedData === 'object' && !Array.isArray(importedData)) {
+               
+                if (confirm("This is a Master Backup. It will replace ALL current characters. Proceed?")) {
+                    allCharacters = importedData;
+                    activeCharacter = Object.keys(allCharacters)[0];
+                    vault = allCharacters[activeCharacter];
+                }
+            } else if (Array.isArray(importedData)) {
+                const charName = prompt("Importing single character. Give them a name:", "Imported Hero");
+                if (charName) {
+                    allCharacters[charName] = importedData;
+                    activeCharacter = charName;
+                    vault = allCharacters[activeCharacter];
+                }
+            }
+
+            saveToDisk();
+            renderCharacterTabs();
+            renderVault();
+            alert("Import Successful!");
+        } catch (err) { 
+            alert("Error: The file is not a valid Hero Vault JSON."); 
+        }
+    };
+    reader.readAsText(file);
+};
+
+document.getElementById("theme-toggle").onclick = () => {
+    document.body.classList.toggle("dark-mode");
+    const isDark = document.body.classList.contains("dark-mode");
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+    document.getElementById("theme-icon").textContent = isDark ? "☀️" : "🌙";
+};
+
+
+
+elements.tableBody.onclick = (e) => {
     const row = e.target.closest('tr');
     if (!row) return;
     const id = Number(row.dataset.id);
@@ -155,6 +279,7 @@ elements.tableBody.addEventListener("click", (e) => {
             vault = vault.filter(i => i.id !== id);
             saveToDisk();
             renderVault();
+            renderCharacterTabs();
         }
     } else if (e.target.classList.contains("edit-btn")) {
         editingItemId = id;
@@ -165,89 +290,33 @@ elements.tableBody.addEventListener("click", (e) => {
         elements.inputs.quantity.value = item.quantity;
         updateUIState();
         window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-});
-
-
-elements.inputs.name.addEventListener("input", (e) => {
-    const inputName = e.target.value.toLowerCase();
-    const remembered = itemMemory[inputName];
-    if (remembered) {
-        elements.inputs.rarity.value = remembered.rarity;
-        elements.inputs.type.value = remembered.type;
-        if (remembered.rarity !== "Artifact") {
-            elements.inputs.value.value = remembered.value;
-        } 
-        updateUIState();
-    }
-});
-
-
-elements.inputs.rarity.addEventListener("change", updateUIState);
-elements.inputs.search.addEventListener("input", renderVault);
-elements.filter.rarity.addEventListener("change", renderVault);
-elements.filter.sort.addEventListener("change", renderVault);   
-
-
-const themeToggleBtn = document.getElementById("theme-toggle");
-const themeIcon = document.getElementById("theme-icon");
-themeToggleBtn.addEventListener("click", () => {
-    document.body.classList.toggle("dark-mode");
-    const isDark = document.body.classList.contains("dark-mode");
-    localStorage.setItem("theme", isDark ? "dark" : "light");
-    themeIcon.textContent = isDark ? "☀️" : "🌙";
-});
-
-
-document.getElementById("export-vault").onclick = () => {
-    if (vault.length === 0) return alert("Vault is empty!");
-    const dataStr = JSON.stringify(vault, null, 2);
-    const blob = new Blob([dataStr], {type: "application/json"});
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement("a");
-    link.href = url;
-    link.download= `vault-export-${new Date().toISOString().split('T')[0]}.json`;
-    link.click();
-};
-
-document.getElementById("import-vault").onchange = (e) => {
-    const file = e.target.files[0];
-    if (!file) return;
-    const reader = new FileReader();
-    reader.onload = (event) => {
-        try {
-            vault = JSON.parse(event.target.result);
-            saveToDisk();
-            renderVault();
-        } catch (err) { alert("Invalid JSON file."); }
-    };
-    reader.readAsText(file);
-};
-
-document.getElementById("clear-vault").onclick = () => {
-    if (confirm("Permanently wipe your vault?")) {
-        vault = []; saveToDisk(); renderVault();
+        renderVault();
     }
 };
+
 
 
 function init() {
-    
     const versionTag = document.getElementById("version-tag");
     if(versionTag) versionTag.textContent = APP_VERSION;
     
-    document.getElementById("footer-date").textContent = new Date().toLocaleDateString(undefined, { 
-        year: 'numeric', month: 'long',
-    });
+    document.getElementById("footer-date").textContent = new Date().getFullYear();
 
-    
     if (localStorage.getItem("theme") === "dark") {
         document.body.classList.add("dark-mode");
-        themeIcon.textContent = "☀️";
+        document.getElementById("theme-icon").textContent = "☀️";
     }
 
-    updateDatalist();
+    
+    renderCharacterTabs();
     renderVault();
+    updateUIState();
 }
+
+
+elements.inputs.search.addEventListener("input", renderVault);
+elements.filter.rarity.addEventListener("change", renderVault);
+elements.filter.sort.addEventListener("change", renderVault);
+elements.inputs.rarity.addEventListener("change", updateUIState);
 
 init();
