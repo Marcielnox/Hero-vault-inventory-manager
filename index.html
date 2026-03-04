@@ -9,29 +9,30 @@
 <body>
     <div class="main-wrapper">
         <aside class="character-sidebar">
+            <h2 style="font-size: 1.2rem; margin-bottom: 10px; text-align: center;">Characters</h2>
             <div id="tabs-list">
                 </div>
             
             <div class="char-actions">
-                <button type="button" class="util-btn" id="add-character-btn" title="Add New Character">➕ New</button>
-                <button type="button" class="util-btn" id="rename-character-btn" title="Rename Character">✏️</button>
-                <button type="button" class="danger-btn" id="delete-character-btn" title="Delete Character">🗑️</button>
+                <button type="button" class="util-btn" id="add-character-btn" title="Add New">➕ New</button>
+                <button type="button" class="util-btn" id="rename-character-btn" title="Rename">✏️</button>
+                <button type="button" class="danger-btn" id="delete-character-btn" title="Delete">🗑️</button>
             </div>
         </aside>
 
         <div class="container">
             <div class="utility-bar">
-                <button type="button" class="util-btn clear-btn" id="clear-vault" title="Wipe current vault">
-                    <span>🗑️</span> Clear All
+                <button type="button" class="util-btn clear-btn" id="clear-vault">
+                    <span>🗑️</span> <span class="btn-text">Clear All</span>
                 </button>
                 <button type="button" class="util-btn" id="export-vault">
-                    <span>📥</span> Export
+                    <span>📥</span> <span class="btn-text">Master Export</span>
                 </button>
                 <button type="button" class="util-btn" onclick="document.getElementById('import-vault').click()">
-                    <span>📤</span> Import
+                    <span>📤</span> <span class="btn-text">Import</span>
                 </button>
                 <input type="file" id="import-vault" style="display: none;" accept=".json">
-                <button type="button" class="util-btn" id="theme-toggle" title="Toggle Dark/Light Mode">
+                <button type="button" class="util-btn" id="theme-toggle">
                     <span id="theme-icon">🌙</span>
                 </button>
             </div>
@@ -64,7 +65,7 @@
                 </div>
 
                 <div class="form-row">
-                    <label for="value">Item Value (gp):</label>
+                    <label for="value">Value (gp):</label>
                     <input type="number" id="value" min="0" inputmode="decimal" />
                 </div>
                 
@@ -82,7 +83,7 @@
             <hr style="border: 0; border-top: 1px solid rgba(255,215,0,0.3); margin-bottom: 30px;">
 
             <div class="form-row">
-                <label for="filter">Filter by Rarity:</label>
+                <label for="filter">Filter Rarity:</label>
                 <select id="filter">
                     <option value="All">All Rarities</option>
                     <option value="Common">Common</option>
@@ -138,7 +139,6 @@
             </footer>
         </div>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>
