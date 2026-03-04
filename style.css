@@ -97,7 +97,7 @@ body {
 
 .utility-bar { 
     position: absolute; 
-    top: 15px; 
+    top: 5px; 
     right: 15px; 
     display: flex; 
     gap: 8px; 
@@ -200,3 +200,4 @@ tbody tr:nth-child(even) { background: var(--row-even); }
     .btn-text { display: none; } 
     h1 { font-size: 24px; }
 }
+
