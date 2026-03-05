@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hero Vault Tracker</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -10,8 +10,7 @@
     <div class="main-wrapper">
         <aside class="character-sidebar">
             <h2 style="font-size: 1.2rem; margin-bottom: 10px; text-align: center;">Characters</h2>
-            <div id="tabs-list">
-                </div>
+            <div id="tabs-list"></div>
             
             <div class="char-actions">
                 <button type="button" class="util-btn" id="add-character-btn" title="Add New">➕ New</button>
@@ -82,34 +81,34 @@
 
             <hr style="border: 0; border-top: 1px solid rgba(255,215,0,0.3); margin-bottom: 30px;">
 
-            <div class="form-row">
-                <label for="filter">Filter Rarity:</label>
-                <select id="filter">
-                    <option value="All">All Rarities</option>
-                    <option value="Common">Common</option>
-                    <option value="Uncommon">Uncommon</option>
-                    <option value="Rare">Rare</option>
-                    <option value="Very Rare">Very Rare</option>
-                    <option value="Legendary">Legendary</option>
-                    <option value="Artifact">Artifact</option>
-                </select>
-            </div>
+            <div class="filters-row">
+                <div class="form-row">
+                    <label for="filter">Filter Rarity:</label>
+                    <select id="filter">
+                        <option value="All">All Rarities</option>
+                        <option value="Common">Common</option>
+                        <option value="Uncommon">Uncommon</option>
+                        <option value="Rare">Rare</option>
+                        <option value="Very Rare">Very Rare</option>
+                        <option value="Legendary">Legendary</option>
+                        <option value="Artifact">Artifact</option>
+                    </select>
+                </div>
 
-            <div class="form-row">
-                <label for="sort">Sort By:</label>
-                <select id="sort">
-                    <option value="None">Newest First</option>
-                    <option value="Rarity">Rarity (Highest First)</option>
-                    <option value="NameAsc">Name (A-Z)</option>
-                    <option value="NameDesc">Name (Z-A)</option>
-                    <option value="ValueAsc">Value (Low to High)</option>
-                    <option value="ValueDesc">Value (High to Low)</option>
-                </select>
-            </div>
+                <div class="form-row">
+                    <label for="sort">Sort By:</label>
+                    <select id="sort">
+                        <option value="None">Newest First</option>
+                        <option value="Rarity">Rarity (Highest)</option>
+                        <option value="NameAsc">Name (A-Z)</option>
+                        <option value="ValueDesc">Value (High-Low)</option>
+                    </select>
+                </div>
 
-            <div class="form-row">
-                <label for="search">Search Vault:</label>
-                <input type="text" id="search" placeholder="Type to search..." />
+                <div class="form-row">
+                    <label for="search">Search:</label>
+                    <input type="text" id="search" placeholder="Type to search..." />
+                </div>
             </div>
 
             <table>
@@ -134,8 +133,7 @@
             </table>
 
             <footer class="vault-footer">
-                <p>© 2026 Created by David "Marciel" Vega | <span id="footer-date"></span></p>
-                <p class="footer-note">Adventurer's Inventory Management System <span id="version-tag"></span></p>
+                <p>© 2026 Created by David "Marciel" Vega | Version 1.1.0</p>
             </footer>
         </div>
     </div>
