@@ -125,6 +125,55 @@ function renderVault() {
     `).join('');
 }
 
+const versionTag = document.getElementById("version-tag");
+if (versionTag) {
+    versionTag.textContent = APP_VERSION;
+}
+
+
+const exportBtn = document.getElementById("export-vault");
+if (exportBtn) {
+    exportBtn.onclick = () => {
+        const dataStr = JSON.stringify(allCharacters, null, 2);
+        const blob = new Blob([dataStr], { type: "application/json" });
+        const url = URL.createObjectURL(blob);
+        
+        const link = document.createElement("a");
+        link.href = url;
+        link.download = `hero-vault-backup-${new Date().toISOString().split('T')[0]}.json`;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        URL.revokeObjectURL(url);
+    };
+}
+
+const importInput = document.getElementById("import-vault");
+if (importInput) {
+    importInput.onchange = (e) => {
+        const file = e.target.files[0];
+        if (!file) return;
+
+        const reader = new FileReader();
+        reader.onload = (event) => {
+            try {
+                const importedData = JSON.parse(event.target.result);
+                if (importedData && typeof importedData === 'object') {
+                    allCharacters = importedData;
+                    activeCharacter = Object.keys(allCharacters)[0];
+                    vault = allCharacters[activeCharacter];
+                    saveToDisk();
+                    renderCharacterTabs();
+                    renderVault();
+                    alert("Vault imported successfully!");
+                }
+            } catch (err) {
+                alert("Error: Invalid JSON file.");
+            }
+        };
+        reader.readAsText(file);
+    };
+}
 
 document.getElementById("theme-toggle").onclick = () => {
     document.body.classList.toggle("dark-mode");
@@ -170,6 +219,7 @@ elements.form.onsubmit = (e) => {
 };
 
 
+
 elements.tableBody.onclick = (e) => {
     const row = e.target.closest('tr');
     if (!row) return;
@@ -193,4 +243,3 @@ elements.tableBody.onclick = (e) => {
         window.scrollTo(0,0);
     }
 };
-
