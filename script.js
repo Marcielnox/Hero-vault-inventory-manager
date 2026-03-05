@@ -243,3 +243,24 @@ elements.tableBody.onclick = (e) => {
         window.scrollTo(0,0);
     }
 };
+const clearBtn = document.getElementById("clear-vault");
+if (clearBtn) {
+    clearBtn.onclick = () => {
+        
+        if (vault.length === 0) {
+            alert("The vault is already empty!");
+            return;
+        }
+
+      
+        const confirmClear = confirm(`⚠️ Are you sure you want to delete ALL items for ${activeCharacter}? This cannot be undone.`);
+        
+        if (confirmClear) {
+            vault = []; 
+            saveToDisk(); 
+            renderVault(); 
+            renderCharacterTabs(); 
+        }
+    };
+}
+
