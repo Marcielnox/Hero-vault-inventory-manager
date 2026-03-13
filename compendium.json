@@ -1,0 +1,352 @@
+[
+    {
+        "id": "bag-of-holding",
+        "name": "Bag of Holding",
+        "rarity": "uncommon",
+        "type": "wondrous item",
+        "value": 500,
+       "description": "This bag has an interior space considerably larger than its outside dimensions, roughly 2 feet in diameter at the mouth and 4 feet deep.",
+       "action": "Can hold up to 500 pounds, not exceeding a volume of 64 cubic feet. Retrieving an item requires an action." 
+    },
+    {
+        "id": "cloak-of-the-thousand-armed",
+        "name": "Cloak of the Thousand Armed",
+        "rarity": "Artifact",
+        "type": "Wondrous Item(Cloak)",
+        "value": 0,
+        "description": "Woven from a fragment of the true body of the Thousand-Armed, the cloak ripples and twists as if it has a life of its own, granting the wearer the relentless striking power of its master.",
+        "action": "Refer to handout for detailed abilities and effects."    
+    },
+    {
+        "id": "ring-of-the-first-sovereign",
+        "name": "Ring of the First Sovereign",
+        "rarity": "Artifact",
+        "type": "wondrous item(Ring)",
+        "value": 0,
+        "description": "Forged from the severed horn of Ruler, the Primordial Origin of Evil, this ring is a shard of the source code of evil. The gold of the band is perpetually warm, pulsing with a rhythmic heat that matches the heartbeat of the wearer. To wear it is to wear a crown on a single finger.",
+        "action": "Refer to handout for detailed abilities and effects."     
+    },
+    {
+       "id": "nidhogg-world-root",
+       "name": "Nidhogg World Root",
+       "rarity": "Artifact",
+       "type": "wondrous item(Staff)",
+       "value": 0,
+       "description": "A root of the World Tree once inert and powerless. Devoured and regurgitated by Nidhogg, the Primordial Consumer. Though warped and blackened, its inner rings still pulse faintly with the cycle of growth, death, and rebirth. The staff is harder than any known metal, impossibly dense, and thrums with competing life and anti-life energies.",
+       "action": "Refer to handout for detailed abilities and effects."    
+    },
+    {
+        "id": "genesis-mail",
+        "name": "Genesis Mail",
+        "rarity": "Artifact",
+        "type": "wondrous item(Armor)",
+        "value": 0,
+        "description": "Forged from a scale of the First Dragon, willingly given, this armor hums with the raw, world-shaping forces of the primordial elements.",
+        "action": "Refer to handout for detailed abilities and effects."      
+    },
+    {
+        "id": "leviathans-maw",
+        "name": "Leviathan's Maw",
+        "rarity": "Artifact",
+        "type": "Wondrous Item(Weapon)",
+        "value": 0,
+        "description": "Carved from the tooth, bone, or hardened flesh of the Great Primordial Leviathan, an entity born from the waters of primordial chaos long before the first gods drew breath. The weapon is unnaturally heavy, cold to the touch, and drips seawater that vanishes on impact with the ground.",
+        "action": "Refer to handout for detailed abilities and effects."     
+    },
+    {
+        "id": "world-sphere",
+        "name": "World Sphere",
+        "rarity": "Artifact",
+        "type": "Wondrous Item(Orb)",
+        "value": 0,
+        "description": "This smooth crystal orb, the size of an apple, shifts with a faint inner light that alternates between brilliance and shadow. Forged by Seraphel, God of Balance, it was made from the mingled essence of his siblings, Solara and Enebris. With it, Seraphel sealed them within the Gates of Alphard, ending their war at the cost of his own life.",
+        "action": "Refer to handout for detailed abilities and effects."
+    },
+    {
+        "id": "fragment-of-the-lost-mantle",
+        "name": "Fragment of the Lost Mantle",
+        "rarity": "Artifact",
+        "type": "Wondrous Item(Cloak)",
+        "value": 0,
+        "description": "A piece of Seraphels divine mantle, now blackened by cosmic rot. Its presence chills the soul and warps the mind.",
+        "action": "You gain a +1 bonus to AC and saving throws. \nYou can cast the Mind Blank spell once per day (duration reduced to 8 hours). \nOnce per long rest, you can use a reaction to counter a godly effect, such as a lair action, legendary action, or divine trait. That effect fails, and the creature that used it takes 4d12 radiant or 4d12 psychic damage. \nCurse: Each time you use this feature, make a DC 20 Charisma saving throw. On a failure, you permanently lose one of the following (DM’s choice): a class feature, a spell, or a trait (such as Darkvision or Fey Ancestry)."
+    },
+    {
+        "id": "graven-tome-of-the-crag",
+        "name": "Graven Tome of the Crag",
+        "rarity": "Legendary",
+        "type": "Wondrous Item(Book)",
+        "value": 100000,
+        "description": "This tome is made of bone and sinew, its pages tattooed with forgotten glyphs in a dead tongue. It sings to necromancers in the still of night.",
+        "action": "Grants the ability to learn three necromancy or shadow themed spells of your choice, they count as known and always prepared. \nOnce per long rest, you can cast a necromancy spell without verbal or somatic components. \nOnce per long rest, you may immediately recast a necromancy spell you just cast without using a spell slot. After doing so, make a DC 18 Constitution saving throw. On a failure, you gain one level of exhaustion."
+    },
+    {
+       "id": "ebonflame-seed",
+        "name": "Ebonflame Seed",
+        "rarity": "Very Rare",
+        "type": "wondrous item",
+        "value": 20000,
+        "description": "A blackened seed warm to the touch, taken from the corrupted roots. It thirsts for blood and silence.",
+        "action": "You can plant the seed into any surface. It grows into a twisted shelter that lasts for 8 hours. Inside, divine magic (including healing and radiant damage) fails to function. \nYou can swallow the seed as a bonus action. For 1 minute, you gain immunity to radiant damage. Afterwards, you suffer permanent disadvantage on death saving throws until cured by Wish or Divine intervention. \nIf you feed it blood equal to 20 hit points, the seed erupts into a coiling vine, it immediately cast Blight at 8th level centered on itself (Creature affected is choosen randomly). Non undead creatures automatically fail the saving throw."
+    },
+    {
+       "id": "blade-of-the-erased",
+        "name": "Blade of the Erased",
+        "rarity": "Artifact",
+        "type": "Wondrous Item(Weapon)",
+        "value": 0,
+        "description": "Forged by the first godling and abandoned in mourning, this black blade devours not flesh but memory.",
+        "action": "This weapon grants a +3 bonus to attack and damage rolls. \nOn a hit, the target takes an aditional 3d10 Psychic damage. \nIf a creature is slain by this weapon, only Wish or True Resurrection can recall them to life or memory. \nCurse:  The weapon is cursed and binds to you upon attunement. Each dawn, roll a DC 17 Wisdom saving throw. On a failure, you forget one long-term memory (DM’s choice). If you forget a bond, ideal, or flaw, replace it with the following: I exist to forget."
+    },
+    {
+       "id": "fractured-heart-of-the-crag",
+       "name": "Fractured Heart of the Crag",
+       "rarity": "Very Rare",
+       "type": "Wondrous Item",
+       "value": 25000,
+       "description": "This cracked, dark red crystal contains a swirling mist a fragment of a soul caught between judgement and decay.",
+       "action": "You gain resistance to necrotic and psychic damage. \nOnce per day, when a creature dies within 30 feet of you, you can use your reaction to absorb its soul. For 1 minute, you regain 10 hit points at the start of each of your turns. \nEach time you use this feature, roll a d6. On a 6, you permanently lose 1 point of Charisma as your soul blackens with the remnants of the dead." 
+    },
+    {
+      "id": "ashen-diadem-of-seraphel",
+      "name": "Ashen Diadem of Seraphel",
+      "rarity": "Legendary",
+      "type": "Wondrous Item(Head)",
+      "value": 100000,
+      "description": "This shattered crown of obsidian and bone still pulses with the divine remnants of Seraphel's will. Though beautiful in its ruin, it whispers to those who listen too long.",
+      "action": "You gain a +2 bonus to spell attack rolls and to your spell save DC. \nYou can cast Plane Shift once per long rest. This version can only target corrupted or undead infested planes, such as the Shadowfell, Hades, or a demiplane of undeath. \nWhen you cast a 5ht level spell or higher, you msut make a DC 15 Wisdom saving throw. On failure, you take 2d12 psychic damage as the fraying veil between the realms lashes back at you. \nWhile attuned, celestials view you as a hostile entity. Undead will not attack you unless directly provoked."  
+    },
+    {
+       "id": "sky-sunderer",
+       "name": "Sky Sunderer",
+       "rarity": "Legendary",
+       "type": "Wondrous Item(Greataxe)",
+       "value": 100000,
+       "description": "Forged by the dwarf-smith Durgan Ironsunder for Guildmaster Barun “Iron Jaw” Akkar, Sky Sunderer is a massive adamantine-headed greataxe veined with mithral traces that pulse like lightning. When swung, the edge hums with thunderous pressure; when it strikes, the air shrieks as if the sky itself were being rent in two. Runes along the haft read, in Old Dwarvish, “Break the storm, break all chains.”",
+       "action": "You gain a +3 bonus to attack and damage rolls made with this magic weapon. \nSky Sunderer deals an extra 2d6 thunder damage on hit. If the target is a creature with a flying speed, the attack deals and additional 2d6 lightning damage. \nWhen you score a critical hit against a large or smaller creature, the target must succeed on a DC 18 Strength saving throw or be pushed up to 20 feet, knocked prone, and deafened untilt he end of its next turn. \nAs an action, you can sweep Sky Sunderer in a great arc, releasing a wave of destructive wind and lightning in a 30-foot-radius, 40-foot-high cylinder centered on yourself. Each creature of your choice in the area must make a DC 18 Dexterity saving throw, taking 8d10 thunder damage and 8d10 lightning damage on a failed save, or half as much on a success. Creatures that fail the save are also pushed 30 feet away from you. Loose objects automatically fail the save. Once you use this property, you can’t use it again until the axe recharges (roll d6 at dawn; on a 5–6 the power returns). \nWhile attuned to the axe, you have resistance to lightning and thunder damage. In addition, while you hold the axe aloft for 1 minute, you can end any nonmagical storm, strong wind, or heavy precipitation within 1 mile. Magical weather effects (such as those created by control weather) are dispelled for 10 minutes (as if affected by dispel magic at 8th level). \nThe axe has the thrown property (range 30/90 ft.). After you make a ranged attack with the axe, it flies back to your hand at the end of the current turn."
+    },
+    {
+      "id": "valithors-knight-armor",
+      "name":"Valithor's Knight Armor",
+      "rarity": "Legendary",
+      "type": "Wondrous Item(Armor)",
+      "value": 100000,
+      "description": "A beautifully crafted suit of half-plate armor, old and battered by time yet the beauty shines through.",
+      "action": "This counts as a +1 half-plate armor, while wearing this armor you have resistance to bludgeoning, piercing, and slashing damage from nonmagical attacks. \nFinal Vow: If you are killed while protecting a sworn ally (an ally you’ve declared your oath to protect, either in character or through a spell or magical bond), you rise at the start of your next turn as a revenant (see the Monster Manual), retaining your current stats and abilities for 24 hours before your soul is permanently lost. After 24 hours, you fall dead once more, and no magic short of a wish spell can bring you back. \nCurse: This armor is cursed and compels a sense of unwavering duty and obedience. You have disadvantage on saving throws against being charmed and against effects that would alter your thoughts or emotions."
+    },
+    {
+        "id": "ravagers-longsword",
+        "name": "Ravager's Longsword",
+        "rarity": "Rare",
+        "type": "Wondrous Item(Weapon)",
+        "value": 5000,
+        "description": "A beautifully crafted sword from a long by gone era.",
+        "action": "You gain a +1 bonus to attack and damage rolls made with this magic weapon. \nReckless Oath: Once per short rest when you hit a creature with this sword, you can force it to make a DC 18 Constitution saving throw. On a failed save, the target is paralyzed until the end of its next turn as visions of its greatest failures overwhelm it. \nCurse: This weapon is cursed. If you have ever broken a sacred oath or betrayed a sworn bond, your AC is permanently reduced by 1 while wielding this sword."
+    },
+    {
+      "id": "shadow-pearl",
+      "name": "Shadow Pearl",
+      "rarity": "Artifact",
+      "type": "Wondrous Item",
+      "value": 0,
+      "description": "This dark, swirling pearl is filled with mist and whispering echoes. It pulses with eerie warmth near death and sorrow, and its presence draws the remnants of lost souls into itself.",
+      "action": "Whispers of the Past: By focusing on the pearl for 1 minute, you can glimpse memories tied to a creature, object, or location. The memories are vague and dreamlike but often offer useful insight. The pearl can reveal events up to 1,000 years in the past. \nSpeak with the Departed: Once per day, you can cast speak with dead without requiring a corpse. The pearl calls out to the lingering spiritual echoes of the dead. \nKeeper of Forgotten Souls: When a creature dies within 30 feet of the pearl, roll a d10. On a 10, the pearl absorbs a fragment of its memory. You can access these memories later using Whispers of the Past. \nCurse of the Abyss: While attuned to the pearl, you suffer haunting visions of death and despair. Once per long rest, the DM may require you to make a DC 18 Wisdom saving throw. On a failed save, you are stunned until the end of your next turn as you relive a traumatic memory not your own."
+    },
+    {
+      "id": "ring-of-the-lost-ruler",
+      "name": "Ring of the Lost Ruler",
+      "rarity": "Very Rare",
+      "type": "Wondrous Item(Ring)",
+      "value": 35000,
+      "description": "This plain silver band bears no jewels or markings, but it carries the weight of a forgotten dynasty. When worn, it feels warm to the touch and tightens subtly during moments of danger.",
+      "action": "While wearing this ring, you gain a +2 bonus to all saving throws. \nDefiance of Fate: Once per day, when you fail a saving throw, you can choose to reroll it. You must use the new result. \nEcho of the King's Vow: When you are reduced to 0 hit points but not killed outright, you can choose to delay unconsciousness for 1 round. You then fall unconscious unless you regain hit points."   
+    },
+    {
+      "id": "ashen-plate-armor",
+      "name": "Ashen Plate Armor",
+      "rarity": "Legendary",
+      "type": "Wondrous Item(Armor)",
+      "value": 100000,
+      "description": "This ancient suit of charcoal-black plate radiates intense heat, though it never burns its wearer. The metal is engraved with the sigils of a forgotten kingdom and its surface is scarred by battle. Embers glow faintly in the seams between plates.",
+      "action": "While wearing this armor, your AC is 20. \nYou ae immune to fire damage. In addition, you reduce any necrotic damage you take by 10. \nBurning Resolve: When you are reduced to 0 hit points but not killed outright, you can choose to remain conscious until the end of your next turn. While doing so, your speed is halved, and you take 5 damage at the start of your turn. You then fall unconscious unless you regain hit points."  
+    },
+    {
+     "id": "crown-of-the-forgotten-king",
+     "name": "Crown of the Forgotten King",
+     "rarity": "Very Rare",
+     "type": "Wondrous Item(Head)",
+     "value": 40000,
+     "description": "Once a symbol of a proud and noble ruler, this cracked golden crown is tarnished by time and despair. Strange runes of power pulse faintly along its band, and the air around it hums with unseen whispers. When worn, the crown clings to your head as if unwilling to be removed.",
+     "action": "While wearing the crown, you gain a +2 bonus to AC and resitance to psychic and necrotic damage. \nEyes of the Lost: You can see invisible creatures and objects within 60 feet of you as if they were visible. \nEchoes of the Damned: After finishing a long rest, roll a d6. On a 1, you suffer one level of exhaustion as your mind becomes lost in whispered regrets and vision of forgotten names."
+    },
+    {
+        "id": "doomed-blade",
+        "name": "Doomed Blade",
+        "rarity": "Legendary",
+        "type": "Wondrous Item(Greatsword)",
+        "value": 100000,
+        "description": "This massive, blackened greatsword drinks in the light around it, its jagged edge seething with cursed energy. The air around the blade shimmers faintly, as if reality itself recoils from its presence. When unsheathed, ghostly whispers echo from the steel, carrying faint voices of the forgotten dead.",
+        "action": "You gain a +3 bonus to attack and damage rolls made with this magic weapon. \nSoul Reaper: When you hit a creature with this weapon, the target takes an extra 2d8 necrotic damage. The target's hit point maximum is reduced by an amount equal to the necrotic damage taken if they fail a constitution saving throw (DC 20). This reduction lasts until the target finishes a long rest. If a creature is reduced to 0 hit points by this weapon, its body turns to blackened ash and its soul is devoured. A creature slain in this way can be restored to life only by a wish spell. \nCursed Burden: While attuned to this weapon, you experience vivid nightmares of a forgotten battlefield each time you sleep. You cannot benefit from the effects of spells that restore life, such as revivify, raise dead, or resurrection, unless the Doomed Blade is first destroyed."
+    },
+    {
+        "id": "ring-of-the-fallen-guardian",
+        "name": "Ring of the Fallen Guardian",
+        "rarity": "Rare",
+        "type": "Wondrous Item(Ring)",
+        "value": 5000,
+        "description": "A simple but beatifully crafted tarnished silver ring.",
+        "action": "While wearing this ring, you have advantage on Strength (Athletics) checks and resistance to force damage. \nIn addition, once per day, when a creature you can see within 30 feet of you is targeted by an attack, you can use your reaction to magically teleport to a space adjacent to the target and become the new target of the attack instead. You must decide to use this feature before the attack is made. You regain the ability to use this feature at dawn."
+    },
+    {
+        "id": "tower-shield-of-the-unbroken-oath",
+        "name": "Tower Shield of the Unbroken Oath",
+        "rarity": "Legendary",
+        "type": "Wondrous Item(Shield)",
+        "value": 150000,
+        "description": "An impossibly heavy rune inscribed shield",
+        "action": "This shield counts as a +3 shield. \nDefensive Bulkwark: When you are hit by an attack, you can use your reaction to reduce the damage by 2d12 + your Constitution modifier. You can use this reaction three times per long rest. \nUnstoppanle Bastion: While wielding this shield, you are immune to being pushed, knocked prone, or forcibly moved against your will unless the source is a creature at least two sizes larger than you. \nOathbound Curse: If you willingly break a sworn oath or promise, you are cursed by the shield. While cursed in this way, your speed is halved, and you are vulnerable to necrotic damage. Only a greater restoration spell or the completion of a great act of penance (as determined by the DM) can lift the curse."
+    },
+    {
+        "id": "pendant-of-the-kings-last-knight",
+        "name": "Pendant of the King's Last Knight",
+        "rarity": "Rare",
+        "type": "Wondrous Item(Necklace)",
+        "value": 5000,
+        "description": "This silver and black pendant bears the insignia of a long fallen order",
+        "action": "While wearing this pendant, you can cast the Heroism spell on yourself once per day. You regain the ability to do so at dawn. \nIn addition, you have advantage on Death saving throws if an ally is within 100 feet of you."
+    },
+    {
+        "id": "soulforged-longsword",
+        "name": "Soulforged Longsword",
+        "rarity": "Very Rare",
+        "type": "Wondrous Item(Weapon)",
+        "value": 30000,
+        "description": "A beautifully crafted weapon forged with the blessings of a god.",
+        "action": "You gain a +2 bonus to attack and damage rolls made with this magic weapon. \nWhen you hit with this weapon, the sword deals an additional 2d8 radiant or necrotic damage(your choice). \nIf an Oathbreaker paladin attempts to attune to this weapon, the bond fails and they take 8d8 radiant damage as the weapon rejects them."
+    },
+    {
+        "id": "auroras-lullaby",
+        "name": "Aurora's Lullaby",
+        "rarity": "Rare",
+        "type": "Wondrous Item(Music Box)",
+        "value": 5000,
+        "description": "This enchanted music box carries the essence of a love long past, and a hope never realized.",
+        "action": "Once per long rest, as an action, the attuned creature may open the box and let the lullaby play. \nWhile the lullaby plays(4 minute duration): \nAll creatures within 30 feet of the music box that can hear it gain advantage on saving throws agaisnt being frightened or charmed. \nAny creature that takes a short rest while within 30 feet of the music box restores an additional 1d6 hit points if the spend at least one Hit Die. \nUndead creature within 30 feet must make a DC 16 Wisdom saving throw at the start of their turn. On a fail save, they are stunned until the start of their next turn. A creature that succeeds is immune to this effect for 24 hours. \nSoothing Residue: If a creature falls asleep within the lullaby's range, they gain the ffect of the Santury spell for 8 hours or until they are awakened."
+    },
+    {
+        "id": "precision-tuning-matrix",
+        "name": "Precision Tuning Matrix",
+        "rarity": "Legendary",
+        "type": "Wondrous Item",
+        "value": 150000,
+        "description": "This intricate device, a fusion of gears, arcane crystals, and fine silver filigree, hums with latent potential. Designed by master artificers, it enhances the precision of any weapon it is affixed to, optimizing its lethality.",
+        "action": "Enhanced Critical: When this matrix is attacked to a no magical weapon, attacks made with that weapon score a critical hit on a roll of 19 and 20. \nArcane Calibration: As a bonus action, the wielder can activate the matrix to enter a state of hyper precision for 1 minute. When active, the weapon's critical range expands to 18-20 instead. This ability can be used once per long rest. \nOverclocked Strike: When the wielder scored a critical hit witht the enhanced weapon, they can choose to overload the matrix, dealing an additional 4d8 force damage. this effect can be used twice per long rest."
+    },
+    {
+        "id": "construct-core-fragment",
+        "name": "Construct Core Fragment",
+        "rarity": "Rare",
+        "type": "Wondrous Item",
+        "value": 5000,
+        "description": "A shard of a powerful construct's power core, thus pulsating crystal is warm to the touch.",
+        "action": "Energy Surge: Once per long rest, as abonus action, you can use the fragment to regain 3d8 hit points. \nStabilizing Field: You can use the fragment to stabilize a dying creature within 10 feet of you, no action required."
+    },
+    {
+        "id": "arcane-amplifier",
+        "name": "Arcane Amplifier",
+        "rarity": "Uncommon",
+        "type": "Wondrous Item",
+        "value": 2000,
+        "description": "This small, metallic device is designed to boost spellcasting efficiency. It resembles a glowing orb of energy enclosed in a gyroscopic frame.",
+        "action": "Spell Boost: When you cast a spell of 1st level or higher, you can reroll a damage die once per turn and use the new result. \nPower Source: The amplifier can power magical devices, prividing 1 charge per day to any magical item that requires charges."
+    },
+    {
+        "id": "lions-roar-pendant",
+        "name": "Lion's Roar Pendant",
+        "rarity": "Rare",
+        "type": "Wondrous Item(Necklace)",
+        "value": 2500,
+        "description": "This pendant is crafted from a lion's tooth encased in gold, strung on a leather cord it hums with an aura of courage.",
+        "action": "Roar of the Wild: Once per long rest, you can unleash a mighty roar as an action. Each creature of your choice within 30 feet must succeed on a DC 15 Wisdom saving throw or be frightened for 1 minute. Creatures immune to being frightened are unaffected. \nAura of Strength: While wearing this pendant, you gain a +2 bonus to Athletics checks."
+    },
+    {
+        "id": "hunters-fang",
+        "name": "Hunter's Fang",
+        "rarity": "Uncommon",
+        "type": "Wondrous Item(Weapon)",
+        "value": 1000,
+        "description": "This dagger is carved from the fang of a jungle predator and is inscribed with tribal runes that glow faintly when held.",
+        "action": "Predator's Strike: When you make an attack with this dagger against a creature that has less than its maximum hit points, the attack deals an extra 2d4 damage. \nTrophy of the Hunt: While carrying this dagger, you gain advantage on Survival checks made to track beasts."
+    },
+    {
+        "id": "soul-forged-aegis",
+        "name": "Soul Forged Aegis",
+        "rarity": "Very Rare",
+        "type": "Wondrous Item(Plate Armor)",
+        "value": 40000,
+        "description": "This masterfully crafted plate armor radiates with a faint blue glow, powered by a core of Avria’s refined energy crystals. It feels lighter than ordinary plate and moves as though alive.",
+        "action": "Living Armor: You gain a +2 bonus to AC while wearing this armor. \nSelf-repairing: The armor repairs minor dents and cracks at dawn. \nLightning Infusion: You gain immunity to lightning damage. Additionally, when you are hit with a melee attack, you can use your reaction to deal 2d8 lightning damage to the attacker. \nAegis Field: As an action, you can activate the armor's defensive field. For 1 minute, your allies(not including you) within 5 feet gain resistance to all damage except psychic. This ability recharges after long rest."
+    },
+    {
+        "id": "heart-of-the-ancestors",
+        "name": "Heart of the Ancestors",
+        "rarity": "Very Rare",
+        "type": "Wondrous Item(Amulet)",
+        "value": 35000,
+        "description": "This ancient amulet, made from polished stone and leonin bone, pulses with ancestral power. It is said to contain the will of past Bloodmane chieftains.",
+        "action": "Ancestral Protection: While wearing this amulet, you can use your reaction to impose disadvantage on an attack roll targeting you or an ally within 10 feet. You can use this feature a number of times equal to your proficiency bonus, regaining all uses after a long rest. \nGuided Strike: When you make an attack roll, you can add a d10 to the roll. This ability recharges on a short or long rest. \nVoice of the Ancestors: As an action, you can cast the spell Commune (no components required), asking the spirits of the Bloodmane tribe for guidance. Once used, this ability cannot be used again until the next dawn."
+    },
+    {
+        "id": "ocean-heart-amulet",
+        "name": "Ocean Heart Amulet",
+        "rarity": "Legendary",
+        "type": "Wondrous Item(Amulet)",
+        "value": 120000,
+        "description": "This amulet seems cool to the touch, and is visibly filled with swirling water that never seems to stop.",
+        "action": "Ocean's Blessing: You gain resistance to cold damage and the ability to breathe underwater. Additionally, you gain a swimming speed equal to your walking speed. \nHeart of the Ocean: you can cast the following spells without expending a spell slot or requiring material components: \nAt will: Shape Water, Create or Destroy Water. \n3/Day each: Control Water, Water Breathing, Wall of Water. \nThe spellcasting ability for these spells is the same as your primary casting ability (save DC = your spell save DC). \nOceaning Restoration: While you are submerged in water, you can use an action to regain hit points equal to 3d10 + your spellcasting modifier. Once you use this property, you can't use it again until the next dawn. \nTidal Surge: As a bonus action, you can command the amulet to surround you with a protective barrier of swirling water for 1 minute. While Active: \nMelee attacks against you have disadvantage. \nRanged attacks have disadvantage. \nCreatures that end their turn within 5 feet of you must make a DC 17 Strength saving throw or be pushed 10 feet away. \nOnce this ability has been used, it cannot be used until the next dawn. \nCursed Dependency: The amulet draws its power from the ocean and its connection to water. If you are separated from the amulet for more than 24 hours, you begin to feel a deep longing for the sea. You have disadvantage on Wisdom saving throws and cannot regain hit points except through magical means until you touch seawater or are reunited with the amulet."
+    },
+    {
+        "id": "amulet-of-the-guardian",
+        "name": "Amulet of the Guardian",
+        "rarity": "Very Rare",
+        "type": "Wondrous Item(Amulet)",
+        "value": 30000,
+        "description": "This amulet, crafted from an ancient oak leaf encased in a crystal, radiates the essence of the forest’s resilience. It is said to be blessed by the ancient protectors of nature, offering its wearer formidable defenses and a connection to the natural world.",
+        "action": "While wearing this amulet, you gain the following benefits: \nGuardian's Endurance: You gain advantage on Constitution saving throws and saving throws against poison. \nNature's Ward: You are immune to the poisoned condition and cannot be restrained by nonmagical plants or vines. \nVerdant Recovery: When you drop to 0 hit points but are not killed outright, you can choose to regain hit points equal to 2d6 + your Constitution modifier (minimum of 1 hit point). Once you use this feature, you can’t use it again until you finish a long rest. \nSpeak with Beast and Plants: You can cast Speak with Animals or Speak with Plants once per long rest without using a spell slot."
+    },
+    {
+        "id": "bag-of-colding",
+        "name": "Bag of Colding",
+        "rarity": "Uncommon",
+        "type": "Wondrous Item",
+        "value": 1000,
+        "description": "This bag functions like a Bag of Holding but is specifically enchanted to preserve perishables. The interior of the bag maintains a constant temperature just above freezing, preventing the spoilage of food, drinks, or other items that require cold storage.",
+        "action": "The Bag of Colding can hold up to 500 pounds of items, not exceeding a volume of 64 cubic feet. However, the cold-preservation magic only affects food, beverages, and other perishable items stored within. \nAny perishable items placed inside the bag are kept fresh indefinitely. Liquids will not freeze but remain chilled, while other items remain at their ideal preservation temperature. \nThe bag weighs 15 pounds, regardless of its contents."
+    },
+    {
+        "id": "chaos-quiver-grandmasters-version",
+        "name": "Chaos Quiver (Grandmaster's Version)",
+        "rarity": "Legendary",
+        "type": "Wondrous Item(Quiver)",
+        "value": 100000,
+        "description": "This rune latticed dragonhide quiver is the magnum opus of Marnak Deepbrand. Veins of molten mithral course across its surface, flaring each time an arrow is drawn.",
+        "action": "Refer to handout for detailed abilities and effects."
+    },
+    {
+        "id": "destiny-maker",
+        "name": "Destiny Maker",
+        "rarity": "Artifact",
+        "type": "Wondrous Item(Lance)",
+        "value": 0,
+        "description": "The lance is now silver-white Celestial Steel, its head long and narrow, etched with script that shifts between radiant and shadowed glyphs. When drawn, a faint sound like distant choir and weeping steel hums through the air. \nIt is no longer merely a weapon. \nIt is a verdict.",
+        "action": "Refer to handout for detailed abilities and effects."
+    },
+    {
+        "id": "didact-of-annihilation",
+        "name": "Didact of Annihilation",
+        "rarity": "Artifact",
+        "type": "Wondrous Component",
+        "value": 0,
+        "description": "This ancient and tattered piece of parchment is utterly unreadable to mortal eyes, as its text constantly shifts and changes. Only beings of divinity or those who have touched godhood can comprehend its meaning. Legends say that it holds the key to apocalyptic knowledge, capable of unraveling the fabric of reality. \nThe Didact of Annihilation is indestructible, and no mortal magic can reveal its contents. The artifact hums faintly with celestial energy, and those who carry it feel an unsettling sense of looming dread."
+    }
+]
